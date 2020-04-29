@@ -1,17 +1,18 @@
-abecedario=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'Ã±', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+def cifracesar(texto,key):
+    texto = input("Mensaje > ").upper()
 
+    n = int(input("Desplazamiento > "))
 
-print("BIENVENIDO A MI CIFRADOR CE‰SAR")
+    abc = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
 
-texto_claro=input("Escribe el texto a cifrar: ")
-clave=int(input("Escribe la clave de cifrado (un numero del 1 al 27): "))
+    cifrado = ""
 
+    for l in texto:
+        if l in abc:
+            pos_letra = abc.index(l)
+            nueva_pos = (pos_letra + n) % len(abc)
+            cifrado+= abc[nueva_pos]
+        else:
+                cifrado+= l
 
-texto_cifrado=""
-
-for letra in texto_claro:
-    nueva_posicion = abecedario.index(letra)
-    letra_cifrada = (nueva_posicion + texto_claro) % len(abecedario)
-    texto_cifrado+= letra_cifrada
-
-print("\nEl mensaje cifrado es:",texto_cifrado)
+    print("Mensaje cifrado:", cifrado)
