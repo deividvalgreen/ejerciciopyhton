@@ -1,10 +1,11 @@
+def cifracesar(texto,key):
+    return "texto_cifrado"
 abecedario = 'abcdefghijklmnopqrstuvwxyz'
 
 print("BIENVENIDO A MI CIFRADOR CÉSAR")
 
 texto_claro=input("Escribe el texto a cifrar: ")
 clave=int(input("Escribe la clave de cifrado (un número del 1 al 27): "))
-
 
 texto_cifrado=""
 for letra in texto_claro:
